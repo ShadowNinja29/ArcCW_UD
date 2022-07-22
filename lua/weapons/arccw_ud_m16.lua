@@ -380,7 +380,7 @@ SWEP.AttachmentElements = {
     ["mount_14"] = {
         AttPosMods = {
             [8] = {
-                vpos = Vector(0, 0.8, 22),
+                vpos = Vector(0, 0.3, 17.5),
                 vang = Angle(90, 0, -90),
             },
         },
@@ -461,6 +461,10 @@ SWEP.AttachmentElements = {
                 vpos = Vector(1.15, 0, 17.9),
                 vang = Angle(90, 0, 0),
             },
+            [16] = {
+                vpos = Vector(0, -1.65, 12.5), -- 21.75 or 15.75
+                vang = Angle(90, 0, -90),
+            },
         }
     },
 
@@ -503,17 +507,21 @@ SWEP.AttachmentElements = {
         },
     },
     ["hg_ru556"] = {
-        VMBodygroups = {
-            {ind = 5, bg = 7},
-        },
+        -- VMBodygroups = {
+        --     {ind = 5, bg = 7},
+        -- },
         AttPosMods = {
-            [5] = {
-                vpos = Vector(-0.1, 1.05, 12),
+            -- [5] = {
+            --     vpos = Vector(-0.1, 1.05, 12),
+            --     vang = Angle(90, 0, -90),
+            -- },
+            -- [6] = {
+            --     vpos = Vector(1.1, 0, 14),
+            --     vang = Angle(90, 0, 0),
+            -- },
+            [16] = {
+                vpos = Vector(0, -1.65, 12.5), -- 21.75 or 15.75
                 vang = Angle(90, 0, -90),
-            },
-            [6] = {
-                vpos = Vector(1.1, 0, 14),
-                vang = Angle(90, 0, 0),
             },
         },
     },
@@ -548,6 +556,19 @@ SWEP.AttachmentElements = {
             {ind = 5, bg = 1},
         },
         VMSkin = 1
+    },
+    ["ud_m16_hg_heat"] = {
+        VMElements = {
+            {
+                Model = "models/weapons/arccw/atts/m203iron.mdl",
+                Bone = "m16_parent",
+                Scale = Vector(1, 1, 1),
+                Offset = {
+                    pos = Vector(0, -1.2, 14.9),
+                    ang = Angle(90, 0, -90),
+                }
+            }
+        },
     },
     ["hg_m605"] = {
         VMBodygroups = {
@@ -675,6 +696,16 @@ SWEP.AttachmentElements = {
 -- Animations --
 
 SWEP.Hook_Think = ArcCW.UC.ADSReload
+
+local sr_pmag = {
+	[path .. "magout.ogg"] = path .. "pmagout.ogg",
+	[path .. "magin.ogg"] = path .. "pmagin.ogg",
+}
+
+local pmag1, pmag2 = {}, {"ud_m16_pmag"}
+SWEP.Hook_TranslateSound = function(wep, data)
+	if wep:CheckFlags(pmag1, pmag2) and sr_pmag[data] then return sr_pmag[data] end
+end
 
 local rottle = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}
 local ratel = {common .. "rattle1.ogg", common .. "rattle2.ogg", common .. "rattle3.ogg"}
@@ -981,63 +1012,6 @@ SWEP.Animations = {
         },
     },
 
-    -- PMAG Plastic mag reload --
-
-    ["reload_pmag"] = {
-        Source = "reload",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 71 / 30,
-        MinProgress = 1.5,
-        LastClip1OutTime = 0.9,
-        LHIK = true,
-        LHIKIn = 0.4,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.3,
-        LHIKOut = 0.5,
-        SoundTable = {
-            {s = rottle,  t = 0.0},
-            {s = ratel, t = 0.25},
-            {s = path .. "pmagout.ogg", 	 t = 0.335},
-            {s = ratel, t = 0.5},
-            {s = common .. "magpouch.ogg", t = 0.7},
-            {s = path .. "pmagin.ogg",    t = 0.97},
-            {s = ratel, t = 1.1},
-            {s = rottle,  t = 1.15},
-            {s = common .. "grab.ogg", t = 1.81},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 1.7},
-            {s = common .. "shoulder.ogg", t = 1.8},
-        },
-    },
-    ["reload_empty_pmag"] = {
-        Source = "reload_empty",
-        TPAnim = ACT_HL2MP_GESTURE_RELOAD_AR2,
-        Time = 79 / 30,
-        MinProgress = 2,
-        LastClip1OutTime = 0.7,
-        LHIK = true,
-        LHIKIn = 0.4,
-        LHIKEaseIn = 0.4,
-        LHIKEaseOut = 0.3,
-        LHIKOut = 0.5,
-        SoundTable = {
-            {s = rottle,  t = 0.0},
-            {s = ratel, t = 0.25},
-            {s = path .. "pmagout.ogg", 	 t = 0.335},
-            {s = ratel, t = 0.5},
-            {s = common .. "magpouch.ogg", t = 0.6},
-            {s = common .. "rifle_magdrop_p.ogg",  t = 0.65},
-            {s = path .. "pmagin.ogg",    t = 0.95},
-            {s = ratel, t = 1.1},
-            {s = rottle,  t = 1.39},
-            {s = path .. "boltdrop.ogg", t = 1.76},
-            {s = ratel, t = 1.9},
-            {s = common .. "grab.ogg", t = 2.0},
-            {s = common .. "rattle_b2i_rifle.ogg", t = 2.0},
-            {s = common .. "shoulder.ogg", t = 2.1},
-        },
-    },
-
-
     -- 60 Round Reloads --
 
     ["reload_60"] = {
@@ -1187,10 +1161,12 @@ local hgLookup = {
     ["default"]     = {0,4,0},
     ["tactical"]    = {2,5,0},
     ["a1"]          = {1,1,1},
+    ["heat"]          = {10,10,1},
+    ["heatm203"]          = {11,11,1},
     ["wood"]          = {1,1,1},
     ["lmg"]          = {3,3,1},
     ["fpw"]          = {6,6,2},
-    ["ru556"]          = {7,7,3},
+    ["ru556"]          = {7,7,2},
     ["adar"]          = {8,8,2},
 }
 -- Structure: 20in appearance, 14/11in appearance, gas block mode
@@ -1577,7 +1553,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Underbarrel",
-        Slot = {"foregrip","ubgl"},
+        Slot = "foregrip",
         Bone = "m16_parent",
         Offset = {
             vpos = Vector(0, 6, 11),
@@ -1589,6 +1565,7 @@ SWEP.Attachments = {
             vmin = Vector(0, .65, 11.5),
             vmax = Vector(0, .65, 7.5),
         },
+		MergeSlots = {18},
     },
     {
         PrintName = "Tactical",
@@ -1671,4 +1648,14 @@ SWEP.Attachments = {
         },
         -- MergeSlots = {17}
     },
+    {
+        PrintName = "M203 slot",
+        Slot = "ubgl",
+        Bone = "m16_parent",
+        Offset = {
+            vpos = Vector(0, -0.4, 7.2),
+            vang = Angle(90, 0, -90),
+        },
+        Hidden = true,
+    }
 }
