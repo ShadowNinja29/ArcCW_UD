@@ -193,13 +193,25 @@ local path2 = ")^weapons/arccw_ud/m16/"
 local path1 = ")^weapons/arccw_ud/870/"
 local path = ")^weapons/arccw_ud/m1014/"
 local common = ")^/arccw_uc/common/"
-SWEP.ShootSound = path .. "fire.ogg"
+SWEP.ShootSound = {
+    path1 .. "fire-01.ogg",
+    path1 .. "fire-02.ogg",
+    path1 .. "fire-03.ogg",
+    path1 .. "fire-04.ogg",
+    path1 .. "fire-05.ogg",
+    path1 .. "fire-06.ogg"
+}
 SWEP.ShootSoundSilenced = path .. "fire_supp.ogg"
 --[[SWEP.DistantShootSound = path .. "fire_dist.ogg"
 SWEP.DistantShootSoundSilenced = common .. "sup_tail.ogg"]]
 SWEP.ShootDrySound = path .. "dryfire.ogg"
 SWEP.DistantShootSoundOutdoors = {
-    path .. "fire_dist.ogg",
+    path1 .. "fire-dist-01.ogg",
+    path1 .. "fire-dist-02.ogg",
+    path1 .. "fire-dist-03.ogg",
+    path1 .. "fire-dist-04.ogg",
+    path1 .. "fire-dist-05.ogg",
+    path1 .. "fire-dist-06.ogg"
 }
 SWEP.DistantShootSoundIndoors = {
     common .. "fire-dist-int-shotgun-01.ogg",
@@ -271,7 +283,7 @@ SWEP.Animations = {
         Time = 23 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Not temporary
+            {s = path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg", t = 0}, -- Not temporary
             {s = path1 .. "eject.ogg", t = 0.01}, -- Not temporary
         },
     },
@@ -289,7 +301,7 @@ SWEP.Animations = {
         Time = 23 / 25,--30,
         ShellEjectAt = false,
         SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Not temporary
+            {s = path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg", t = 0}, -- Not temporary
             --{s = path1 .. "eject.ogg", t = 0}, -- Not temporary
         },
     },
@@ -342,7 +354,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0},
             {s = path .. "breechload.ogg",  t = 0.05},
-            {s = path .. "breechclose.ogg",  t = 0.7},
+            {s = path .. "breechclose.ogg",  t = 0.75},
         },
         ForceEmpty = true,
     },
@@ -420,7 +432,7 @@ SWEP.Animations = {
         Time = 23 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Not temporary
+            {s = path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg", t = 0}, -- Not temporary
             {s = path1 .. "eject.ogg", t = 0.01}, -- Not temporary
         },
     },
@@ -438,7 +450,7 @@ SWEP.Animations = {
         Time = 23 / 25,--30,
         ShellEjectAt = false,
         SoundTable = {
-            {s = path .. "mech.ogg", t = 0}, -- Not temporary
+            {s = path .. "mech_last.ogg", t = 0}, -- Not temporary
             --{s = path1 .. "eject.ogg", t = 0}, -- Not temporary
         },
     },
@@ -491,7 +503,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0},
             {s = path .. "breechload.ogg",  t = 0.05},
-            {s = path .. "breechclose.ogg",  t = 0.7},
+            {s = path .. "breechclose.ogg",  t = 0.75},
         },
         ForceEmpty = true,
     },
@@ -571,6 +583,13 @@ SWEP.AttachmentElements = {
         },
         VMPoseParams = {["grip"] = 1}
     },
+    ["ud_autoshotgun_stock_gripstock"] = {
+        VMBodygroups = {
+            {ind = 3, bg = 4},
+            {ind = 6, bg = 1},
+        },
+        VMPoseParams = {["grip"] = 0}
+    },
 
     ["ud_m1014_handguard_sport"] = {
         VMBodygroups = {{ind = 5, bg = 2}},
@@ -634,6 +653,11 @@ SWEP.Attachments = {
     {
         PrintName = "Stock",
         Slot = {"ud_1014_stock"},
+        Bone = "1014_parent",
+        Offset = {
+            vpos = Vector(-0.02, 1.9, -2.07),
+            vang = Angle(90, 0, -90),
+        },
         DefaultAttName = "Extended Stock",
         DefaultAttIcon = Material("entities/att/acwatt_ud_m1014_stock.png", "smooth mips"),
     },
