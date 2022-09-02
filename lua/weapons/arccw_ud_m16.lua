@@ -702,7 +702,7 @@ SWEP.AttachmentElements = {
 SWEP.Hook_Think = ArcCW.UC.ADSReload
 
 local sr_pmag = {
-	[path .. "magout_empty.ogg"] = path .. "pmagout_empty.ogg",
+	[path .. "magout_empty.ogg"] = path .. "pmagout.ogg",
 	[path .. "magin.ogg"] = path .. "pmagin.ogg",
 }
 
@@ -869,7 +869,7 @@ SWEP.Animations = {
         LHIKOut = 0.7,
         SoundTable = {
             {s = rottle,  t = 0.0},
-            {s = common .. "magpouch.ogg", t = 0.2, v = 0.5},
+            {s = common .. "magpouch_gear.ogg", t = 0.2, v = 0.5},
             {s = ratel, t = 0.25},
             {s = path .. "magout_empty.ogg", 	 t = 0.23},
             {s = ratel, t = 0.5},
@@ -896,7 +896,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle,  t = 0.0},
             {s = ratel, t = 0.25},
-            {s = common .. "magpouch.ogg", t = 0.1, v = 0.5},
+            {s = common .. "magpouch_gear.ogg", t = 0.1, v = 0.5},
             {s = path .. "magout_empty.ogg", 	 t = 0.2},
             {s = ratel, t = 0.5},
             {s = common .. "rifle_magdrop.ogg",  t = 0.65},
@@ -929,7 +929,7 @@ SWEP.Animations = {
             {s = rottle,  t = 0.0},
             {s = ratel, t = 0.05},
             {s = path .. "magout_empty.ogg", 	 t = 0.09},
-            {s = common .. "magpouch.ogg", t = 0.1},
+            {s = common .. "magpouch_gear.ogg", t = 0.1},
             {s = rottle,  t = 0.75},
             {s = ratel, t = 0.85},
             {s = path .. "struggle.ogg",    t = 0.9, v = 0.4},
@@ -953,7 +953,7 @@ SWEP.Animations = {
         LHIKEaseOut = 0.3,
         LHIKOut = 0.8,
         SoundTable = {
-            {s = common .. "magpouch.ogg", t = 0},
+            {s = common .. "magpouch_gear.ogg", t = 0},
             {s = rottle, t = 0.01},
             {s = ratel, t = 0.05},
             {s = path .. "magout_empty.ogg", 	 t = 0.075},
@@ -988,7 +988,7 @@ SWEP.Animations = {
             {s = rottle, t = 0.0},
             {s = ratel, t = 0.1},
             {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = common .. "magpouch.ogg", t = 0.25},
+            {s = common .. "magpouch_gear.ogg", t = 0.25},
             {s = rottle, t = 0.75},
             {s = ratel, t = 0.8},
             {s = path .. "struggle.ogg",    t = 0.95, v = 0.4},
@@ -1013,7 +1013,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle,  t = 0.0},
             {s = path .. "magout_empty.ogg", 	 t = 0.2},
-            {s = common .. "magpouch.ogg", t = 0.25},
+            {s = common .. "magpouch_gear.ogg", t = 0.25},
             {s = rottle,  t = 0.75},
             {s = common .. "rifle_magdrop.ogg",  t = 0.8},
             {s = path .. "struggle.ogg",    t = 1.0, v = 0.4},
@@ -1041,7 +1041,7 @@ SWEP.Animations = {
         LHIKOut = 0.7,
         SoundTable = {
             {s = rottle, t = 0.0},
-            {s = common .. "magpouch.ogg", t = 0.2},
+            {s = common .. "magpouch_gear.ogg", t = 0.2},
             {s = path .. "magout_empty.ogg", 	 t = 0.25},
             {s = rottle, t = 0.75},
             {s = path .. "struggle.ogg",    t = 1.0, v = 0.4},
@@ -1065,7 +1065,7 @@ SWEP.Animations = {
         LHIKOut = 0.8,
         SoundTable = {
             {s = rottle, t = 0.0},
-            {s = common .. "magpouch.ogg", t = 0.2},
+            {s = common .. "magpouch_gear.ogg", t = 0.2},
             {s = path .. "magout_empty.ogg", 	 t = 0.25},
             {s = rottle, t = 0.75},
             {s = common .. "rifle_magdrop.ogg",  t = 0.8},
@@ -1151,7 +1151,7 @@ SWEP.Animations = {
         LHIKOut = 0.5,
         SoundTable = {
             {s = rottle, t = 0.0},
-            {s = common .. "magpouch.ogg", t = 0.15},
+            {s = common .. "magpouch_gear.ogg", t = 0.15},
             {s = "weapons/arccw_ud/uzi/" .. "magout_empty.ogg", 	 t = 16 / 30},
             {s = rottle, t = 0.75},
             {s = "weapons/arccw_ud/uzi/" .. "magin.ogg",    t = 27 / 30},
@@ -1174,7 +1174,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle, t = 0.0},
             {s = "weapons/arccw_ud/uzi/" .. "magout_empty.ogg", 	 t = 0.1},
-            {s = common .. "magpouch.ogg", t = 0.65},
+            {s = common .. "magpouch_gear.ogg", t = 0.65},
             {s = rottle, t = 0.75},
             {s = "weapons/arccw_ud/uzi/" .. "magin.ogg",    t = 0.8},
             {s = path .. "chamber_press.ogg", t = 1.7},
