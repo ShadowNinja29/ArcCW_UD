@@ -168,8 +168,8 @@ SWEP.HoldtypeActive = "ar2"
 SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
-     Pos = Vector(-3.035, -5, 1.67),
-     Ang = Angle(.345, 0.006, 0),
+     Pos = Vector(-2.73, -2, 0.4),
+     Ang = Angle(.345, 0.01, 0),
      Magnification = 1.1,
      SwitchToSound = "",
 }
@@ -180,8 +180,8 @@ SWEP.HolsterAng = Angle(-5.5, 20, -20)
 SWEP.SprintPos = Vector(-0.5, -4, -3)
 SWEP.SprintAng = Angle(3.5, 7, -20)
 
-SWEP.ActivePos = Vector(0.2, -1, 0.7)
-SWEP.ActiveAng = Angle(0, 0, -3)
+SWEP.ActivePos = Vector(-0.25, 0, 0.1)
+SWEP.ActiveAng = Angle(0, 0, -0)
 
 SWEP.CrouchPos = Vector(-4, -2, 0)
 SWEP.CrouchAng = Angle(0, 0, -30)
@@ -247,7 +247,7 @@ local ratel = {common .. "rattle1.ogg", common .. "rattle2.ogg", common .. "ratt
 
 SWEP.Hook_Think = ArcCW.UC.ADSReload
 
-local shellin = {path .. "shell-insert-01.ogg", path .. "shell-insert-02.ogg", path .. "shell-insert-03.ogg", path .. "shell-insert-04.ogg", path .. "shell-insert-05.ogg"}
+local shellin = {path .. "shell-insert-01.ogg", path .. "shell-insert-02.ogg", path .. "shell-insert-03.ogg"}
 
 SWEP.Animations = {
     ["idle"] = {
@@ -261,17 +261,17 @@ SWEP.Animations = {
     },
     ["draw"] = {
         Source = "draw",
-        Time = 20 / 30,
+        Time = 30 / 30,
         SoundTable = ArcCW.UC.DrawSounds,
     },
     ["draw_empty"] = {
         Source = "draw_empty",
-        Time = 20 / 30,
+        Time = 30 / 30,
         SoundTable = ArcCW.UC.DrawSounds,
     },
     ["draw_jammed"] = {
         Source = "draw_jammed",
-        Time = 20 / 30,
+        Time = 30 / 30,
         SoundTable = ArcCW.UC.DrawSounds,
     },
     ["holster"] = {
@@ -291,7 +291,7 @@ SWEP.Animations = {
     },
     ["fire"] = {
         Source = "fire",
-        Time = 23 / 25,--30,
+        Time = 16 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
             {s = path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg", t = 0, v = 0.45}, -- Not temporary
@@ -300,7 +300,7 @@ SWEP.Animations = {
     },
     ["fire_iron"] = {
         Source = "fire",
-        Time = 23 / 25,--30,
+        Time = 18 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
             {s = path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg", t = 0}, -- Not temporary
@@ -309,7 +309,7 @@ SWEP.Animations = {
     },
     ["fire_empty"] = {
         Source = "fire_empty",
-        Time = 23 / 25,--30,
+        Time = 18 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
             {s = path .. "mech_last.ogg", t = 0}, -- Not temporary
@@ -318,7 +318,7 @@ SWEP.Animations = {
     },
     ["fire_iron_empty"] = {
         Source = "fire_empty",
-        Time = 23 / 25,--30,
+        Time = 20 / 25,--30,
         ShellEjectAt = 0.01,
         SoundTable = {
             {s = path .. "mech_last.ogg", t = 0}, -- Not temporary
@@ -337,14 +337,14 @@ SWEP.Animations = {
     ["unjam"] = {
         Source = "jam_fix",
         Time = 60 / 30,
-        ShellEjectAt = 1.1,
+        ShellEjectAt = 0.8,
         LHIK = true,
         SoundTable = {
             {s = rottle, t = 0},
-            {s = path2 .. "grab.ogg", t = .4},
-            {s = path2 .. "usas_chback.ogg", t = 0.8},
-            {s = path1 .. "eject.ogg", t = 1.1},
-            {s = path .. "breechclose.ogg", t = 0.9},
+            {s = path2 .. "grab.ogg", t = 0.1},
+            {s = path .. "chback.ogg", t = 0.7},
+            {s = path1 .. "eject.ogg", t = 0.8, v = 0.4},
+            {s = path .. "chamber.ogg", t = 1.0},
             {s = rottle, t = 1.2},
         },
     },
@@ -356,9 +356,8 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle, t = 0},
             {s = path2 .. "grab.ogg", t = .4},
-            {s = path2 .. "usas_chback.ogg", t = 0.8},
+            {s = path .. "chback.ogg", t = 0.8},
             {s = path1 .. "eject.ogg", t = 1.1},
-            --{s = path .. "breechclose.ogg", t = 1.2},
             {s = rottle, t = 1.2},
         },
     },
@@ -382,8 +381,8 @@ SWEP.Animations = {
         TPAnim = ACT_HL2MP_GESTURE_RELOAD_SHOTGUN,
         SoundTable = {
             {s = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0},
-            {s = path .. "breechload.ogg",  t = 0.05},
-            {s = path .. "breechclose.ogg",  t = 0.75},
+            {s = path .. "breechload.ogg",  t = 0.25},
+            {s = path .. "breechclose.ogg",  t = 0.9},
         },
         ForceEmpty = true,
     },
@@ -403,7 +402,7 @@ SWEP.Animations = {
     },
     ["sgreload_finish"] = {
         Source = "sgreload_finish",
-        Time = 22 / 30,
+        Time = 30 / 30,
         LHIK = true,
         LHIKIn = 0,
         LHIKEaseOut = 0.3,
@@ -491,7 +490,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle, t = 0},
             {s = path2 .. "grab.ogg", t = .4},
-            {s = path2 .. "usas_chback.ogg", t = 0.8},
+            {s = path .. "chback.ogg", t = 0.8},
             {s = path1 .. "eject.ogg", t = 1.1},
             {s = path .. "breechclose.ogg", t = 0.9},
             {s = rottle, t = 1.2},
@@ -505,7 +504,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = rottle, t = 0},
             {s = path2 .. "grab.ogg", t = .4},
-            {s = path2 .. "usas_chback.ogg", t = 0.8},
+            {s = path .. "chback.ogg", t = 0.8},
             {s = path1 .. "eject.ogg", t = 1.1},
             --{s = path .. "breechclose.ogg", t = 1.2},
             {s = rottle, t = 1.2},
@@ -582,8 +581,8 @@ SWEP.AttachmentElements = {
             }
         },
         Override_IronSightStruct = {
-            Pos = Vector(-3.035, -5, 1.55),
-            Ang = Angle(.975, 0.006, 0),
+            Pos = Vector(-2.73, -2, 0.27),
+            Ang = Angle(1.0, 0.01, 0),
             Magnification = 1.1
         },
     },
