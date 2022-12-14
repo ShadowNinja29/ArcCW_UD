@@ -12,14 +12,23 @@ att.Desc_Pros = {
 att.Desc_Cons = {
 }
 att.Desc_Neutrals = {
+    "ud.glock.nytesyte.1",
+    "ud.glock.nytesyte.2",
 }
 att.Slot = "ud_glock_slide"
 
 att.AutoStats = true
 
-att.Mult_SightTime = 1.25
-att.Mult_HipDispersion = 0.9
-att.Mult_Recoil = .5
-att.Mult_RecoilSide = 6
-
 att.ActivateElements = {"ud_glock_slide_nytesyte"}
+
+att.O_Hook_Override_RecoilDirection = function(wep, data)
+    if wep:GetState() == ArcCW.STATE_SIGHTS then
+        return {current = Angle(0, -1, 0)}
+    end
+end
+
+att.O_Hook_Override_RecoilDirectionSide = function(wep, data)
+    if wep:GetState() == ArcCW.STATE_SIGHTS then
+        return {current = Angle(1, 0, 0)}
+    end
+end

@@ -5,6 +5,9 @@ L["ud.title"] = "Urban Decay"
 -- Glock
 L["ud.glock.cs"] = "+3 Default magazine capacity"
 L["ud.glock.subcompact"] = "Enables Subcompact attachments"
+L["ud.glock.nytesyte.1"] = "Recoil becomes sideways while aiming"
+L["ud.glock.nytesyte.2"] = "Optics will be mounted sideways"
+
 L["ud.hushpuppy"] = "Switch to slide-lock firemode for manual action, reducing volume and imprecision"
 
 L["fcg.slidelock"] = "Slide-lock"
