@@ -697,10 +697,9 @@ SWEP.Attachments = {
         Slot = {"optic_lp","optic"}, -- ,"optic"
         Bone = "uzi_parent",
         Offset = {
-            vpos = Vector(-0.2, -1.6, -1),
+            vpos = Vector(-0.2, -1.55, -0.5),
             vang = Angle(90, 0, -90),
         },
-        VMScale = Vector(1, 1, 1),
         InstalledEles = {"ud_uzi_rail_optic"}
     },
     {
