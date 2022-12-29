@@ -57,9 +57,10 @@ SWEP.AnimShoot = ACT_HL2MP_GESTURE_RANGE_ATTACK_SHOTGUN
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-7, 4, -5.8),
-    ang        =    Angle(-6, 0, 180),
+    pos        =    Vector(-8, 5.5, -4.5),
+    ang        =    Angle(-12, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
+    scale = 1 - ( 0.35 * 0.5 )
 }
 
 -- Damage parameters --
@@ -131,7 +132,7 @@ SWEP.Primary.Ammo = "smg1_grenade"
 
 SWEP.SpeedMult = 0.92
 SWEP.SightedSpeedMult = 0.5
-SWEP.SightTime = 0.5
+SWEP.SightTime = 0.35
 SWEP.ShootSpeedMult = 0.75
 
 -- Length --
@@ -142,8 +143,8 @@ SWEP.ExtraSightDist = 2
 -- Ironsights / Customization / Poses --
 
 SWEP.HoldtypeHolstered = "passive"
-SWEP.HoldtypeActive = "shotgun"
-SWEP.HoldtypeSights = "ar2"
+SWEP.HoldtypeActive = "ar2"
+SWEP.HoldtypeSights = "rpg"
 
 SWEP.IronSightStruct = {
     Pos = Vector(-3.51, -5, 2.2),

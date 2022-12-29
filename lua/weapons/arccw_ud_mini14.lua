@@ -144,7 +144,7 @@ SWEP.MalfunctionMean = 100
 
 SWEP.SpeedMult = 0.9
 SWEP.SightedSpeedMult = 0.75
-SWEP.SightTime = 0.4
+SWEP.SightTime = 0.35
 SWEP.ShootSpeedMult = 0.9
 
 -- Length --
@@ -185,9 +185,10 @@ SWEP.BarrelOffsetHip = Vector(3, 0, -3)
 
 SWEP.MirrorVMWM = true
 SWEP.WorldModelOffset = {
-    pos        =    Vector(-8, 5, -7),
-    ang        =    Angle(-6, 0, 180),
+    pos        =    Vector(-10, 6.5, -6),
+    ang        =    Angle(-12, 0, 180),
     bone    =    "ValveBiped.Bip01_R_Hand",
+    scale = 1 - ( 0.35 * 0.75 )
 }
 
 -- Firing sounds --
