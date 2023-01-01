@@ -153,7 +153,7 @@ SWEP.Primary.Ammo = "buckshot"
 
 SWEP.SpeedMult = 0.92
 SWEP.SightedSpeedMult = 0.6
-SWEP.SightTime = 0.35
+SWEP.SightTime = 0.4
 SWEP.ShootSpeedMult = 0.75
 
 -- Length --
@@ -623,8 +623,7 @@ SWEP.AttachmentElements = {
     },
     ["ud_autoshotgun_stock_gripstock"] = {
         VMBodygroups = {
-            {ind = 3, bg = 4},
-            {ind = 6, bg = 1},
+            {ind = 3, bg = 5},
         },
         VMPoseParams = {["grip"] = 0}
     },
