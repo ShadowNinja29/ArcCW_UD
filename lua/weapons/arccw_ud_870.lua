@@ -124,7 +124,7 @@ SWEP.ShootPitch = 100
 SWEP.ProceduralRegularFire = false
 SWEP.ProceduralIronFire = false
 
-SWEP.ReloadInSights = true
+SWEP.ReloadInSights = false
 
 -- NPC --
 
@@ -438,8 +438,8 @@ SWEP.AttachmentElements = {
             {ind = 8, bg = 1},
         },
         Override_IronSightStruct = {
-            Pos = Vector(-3.665, -2.75, 2.1),
-            Ang = Angle(-0.6, 0, 1),
+            Pos = Vector(-3.68, -2.75, 2.2),
+            Ang = Angle(-0.6, -0.03, 2),
             Magnification = 1.1,
             SwitchToSound = "",
         },
@@ -467,7 +467,7 @@ SWEP.AttachmentElements = {
     ["ud_870_barrel_long"] = {
         AttPosMods = {
             [3] = {
-                vpos = Vector(-0.03, -0.65, 39.5),
+                vpos = Vector(-0.03, -0.54, 36),
             }
         },
         VMBodygroups = {
@@ -481,7 +481,7 @@ SWEP.AttachmentElements = {
         },
         AttPosMods = {
             [3] = {
-                vpos = Vector(-0.03, -0.9, 19),
+                vpos = Vector(-0.03, -0.79, 17.8),
             }
         },
     },
@@ -541,7 +541,7 @@ SWEP.Attachments = {
         Slot = {"choke", "muzzle_shotgun"},
         Bone = "870_parent",
         Offset = {
-            vpos = Vector(-0.03, -0.75, 26.3),
+            vpos = Vector(-0.03, -0.79, 24.6),
             vang = Angle(90, 0, -90),
         },
     },
