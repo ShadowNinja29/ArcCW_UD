@@ -257,6 +257,13 @@ SWEP.DistantShootSoundOutdoorsVolume = 1
 SWEP.DistantShootSoundIndoorsVolume = 1
 SWEP.Hook_AddShootSound = ArcCW.UC.InnyOuty
 
+local miss = {common .. "punch-gun-miss-01.ogg", common .. "punch-gun-miss-02.ogg", common .. "punch-gun-miss-03.ogg", common .. "punch-gun-miss-04.ogg", common .. "punch-gun-miss-05.ogg", common .. "punch-gun-miss-06.ogg"}
+local hitwall = {common .. "punch-gun-wall-01.ogg", common .. "punch-gun-wall-02.ogg", common .. "punch-gun-wall-03.ogg", common .. "punch-gun-wall-04.ogg", common .. "punch-gun-wall-05.ogg", common .. "punch-gun-wall-06.ogg"}
+local hitplayer = {common .. "punch-gun-player-01.ogg", common .. "punch-gun-player-02.ogg", common .. "punch-gun-player-03.ogg", common .. "punch-gun-player-04.ogg", common .. "punch-gun-player-05.ogg", common .. "punch-gun-player-06.ogg"}
+SWEP.MeleeMissSound = miss
+SWEP.MeleeHitSound = hitwall
+SWEP.MeleeHitNPCSound = hitplayer
+
 -- Bodygroups --
 
 SWEP.BulletBones = {
@@ -614,6 +621,16 @@ SWEP.Animations = {
             {s = path .. "holster.ogg", t = 0.2}, -- Not Temporary
         },
     },
+    ["bash"] = {
+        Source = "melee2",
+        Time = 35 / 30,
+        --SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0, v = 0.5 }},
+    },
+    ["bash_empty"] = {
+        Source = "melee2_empty",
+        Time = 35 / 30,
+        --SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0 }},
+    },
     ["fire"] = {
         Source = "fire",
         Time = 16 / 30,
@@ -643,13 +660,13 @@ SWEP.Animations = {
         },
     },
     ["fire_stock"] = {
-        Source = "fire",
+        Source = "fire_stock",
         Time = 16 / 30,
         ShellEjectAt = 0.03,
         SoundTable = {{ s = {path .. "mech-01.ogg", path .. "mech-02.ogg", path .. "mech-03.ogg", path .. "mech-04.ogg", path .. "mech-05.ogg", path .. "mech-06.ogg"}, t = 0.03 }},
     },
     ["fire_empty_stock"] = {
-        Source = "fire_empty",
+        Source = "fire_empty_stock",
         Time = 16 / 30,
         ShellEjectAt = 0.03,
         SoundTable = {
