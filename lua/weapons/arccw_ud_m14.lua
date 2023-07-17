@@ -97,11 +97,14 @@ SWEP.Sway = 0.25
 
 -- Firerate / Firemodes --
 
-SWEP.Delay = 60 / 750
+SWEP.Delay = 60 / 700
 SWEP.Num = 1
 SWEP.Firemodes = {
     {
         Mode = 2,
+    },
+    {
+        Mode = 1,
     },
     {
         Mode = 0,
@@ -190,7 +193,7 @@ SWEP.WorldModelOffset = {
 
 -- Firing sounds --
 
-local path = ")weapons/arccw_ud/mini14/"
+local path = ")weapons/arccw_ud/m14/"
 local common = ")/arccw_uc/common/"
 SWEP.ShootSound = {
     path .. "fire-01.ogg",
@@ -202,26 +205,26 @@ SWEP.ShootSound = {
 }
 SWEP.ShootSoundSilenced = path .. "fire_supp.ogg"
 SWEP.DistantShootSound = nil
-SWEP.DistantShootSoundSilenced = common .. "sup_tail.ogg"
+SWEP.DistantShootSoundSilenced = nil
 SWEP.ShootDrySound = path .. "dryfire.ogg"
 
-local tail = ")/arccw_uc/common/556x45/"
+local tail = ")/arccw_uc/common/308/"
 
 SWEP.DistantShootSoundOutdoors = {
-    tail .. "fire-dist-556x45-rif-ext-01.ogg",
-    tail .. "fire-dist-556x45-rif-ext-02.ogg",
-    tail .. "fire-dist-556x45-rif-ext-03.ogg",
-    tail .. "fire-dist-556x45-rif-ext-04.ogg",
-    tail .. "fire-dist-556x45-rif-ext-05.ogg",
-    tail .. "fire-dist-556x45-rif-ext-06.ogg"
+    tail .. "fire-dist-308-rif-ext-01.ogg",
+    tail .. "fire-dist-308-rif-ext-02.ogg",
+    tail .. "fire-dist-308-rif-ext-03.ogg",
+    tail .. "fire-dist-308-rif-ext-04.ogg",
+    tail .. "fire-dist-308-rif-ext-05.ogg",
+    tail .. "fire-dist-308-rif-ext-06.ogg"
 }
 SWEP.DistantShootSoundIndoors = {
-    tail .. "fire-dist-556x45-rif-int-01.ogg",
-    tail .. "fire-dist-556x45-rif-int-02.ogg",
-    tail .. "fire-dist-556x45-rif-int-03.ogg",
-    tail .. "fire-dist-556x45-rif-int-04.ogg",
-    tail .. "fire-dist-556x45-rif-int-05.ogg",
-    tail .. "fire-dist-556x45-rif-int-06.ogg"
+    tail .. "fire-dist-308-rif-int-01.ogg",
+    tail .. "fire-dist-308-rif-int-02.ogg",
+    tail .. "fire-dist-308-rif-int-03.ogg",
+    tail .. "fire-dist-308-rif-int-04.ogg",
+    tail .. "fire-dist-308-rif-int-05.ogg",
+    tail .. "fire-dist-308-rif-int-06.ogg"
 }
 SWEP.DistantShootSoundOutdoorsSilenced = {
     common .. "sup-tail-01.ogg",
@@ -236,12 +239,7 @@ SWEP.DistantShootSoundOutdoorsSilenced = {
     common .. "sup-tail-10.ogg"
 }
 SWEP.DistantShootSoundIndoorsSilenced = {
-    common .. "fire-dist-int-pistol-light-01.ogg",
-    common .. "fire-dist-int-pistol-light-02.ogg",
-    common .. "fire-dist-int-pistol-light-03.ogg",
-    common .. "fire-dist-int-pistol-light-04.ogg",
-    common .. "fire-dist-int-pistol-light-05.ogg",
-    common .. "fire-dist-int-pistol-light-06.ogg"
+    common .. "sup_tail.ogg"
 }
 SWEP.DistantShootSoundOutdoorsVolume = 1
 SWEP.DistantShootSoundIndoorsVolume = 1
@@ -353,7 +351,7 @@ SWEP.Animations = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "rattle.ogg", t = 0.2},
             {s = path .. "chback.ogg",  t = 0.25},
-            {s = path .. "chamber.ogg", t = 0.35},
+            {s = path .. "chforward.ogg", t = 0.35},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0.8},
             {s = common .. "shoulder.ogg",  t = 1},
         },
@@ -437,7 +435,7 @@ SWEP.Animations = {
         SoundTable = {
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0.0},
             {s = path .. "chback.ogg",  t = 0.25},
-            {s = path .. "chamber.ogg", t = 0.35},
+            {s = path .. "chforward.ogg", t = 0.35},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0.8},
             {s = common .. "shoulder.ogg",  t = 1},
         },
@@ -490,7 +488,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.10},
             {s = path .. "chback.ogg",  t = 1.85},
-            {s = path .. "chamber.ogg", t = 1.95},
+            {s = path .. "chforward.ogg", t = 1.95},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.2},
             {s = common .. "shoulder.ogg",  t = 2.4},
         },
@@ -537,7 +535,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.10},
             {s = path .. "chback.ogg",  t = 1.90},
-            {s = path .. "chamber.ogg", t = 2.00},
+            {s = path .. "chforward.ogg", t = 2.00},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.4},
             {s = common .. "shoulder.ogg",  t = 2.5},
         },
@@ -561,6 +559,7 @@ SWEP.Animations = {
             {s = path .. "magout.ogg", 	t = 0.3},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 0.3},
             {s = common .. "magpouch.ogg", t = 0.7, c = ci},
+            {s = path .. "magplace.ogg",   t = 0.95},
             {s = path .. "magin.ogg",   t = 1.10},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 1.4},
             {s = common .. "shoulder.ogg",  t = 1.85},
@@ -585,7 +584,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.20},
             {s = path .. "chback.ogg",  t = 2},
-            {s = path .. "chamber.ogg", t = 2.1},
+            {s = path .. "chaforward.ogg", t = 2.1},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.3},
             {s = common .. "shoulder.ogg",  t = 2.65},
         },
@@ -633,7 +632,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.20},
             {s = path .. "chback.ogg",  t = 2},
-            {s = path .. "chamber.ogg", t = 2.1},
+            {s = path .. "chforward.ogg", t = 2.1},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.3},
             {s = common .. "shoulder.ogg",  t = 2.65},
         },
@@ -681,7 +680,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.20},
             {s = path .. "chback.ogg",  t = 2},
-            {s = path .. "chamber.ogg", t = 2.1},
+            {s = path .. "chforward.ogg", t = 2.1},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.3},
             {s = common .. "shoulder.ogg",  t = 2.65},
         },
@@ -729,7 +728,7 @@ SWEP.Animations = {
             {s = common .. "rifle_magdrop.ogg",  t = 0.9},
             {s = path .. "magin.ogg",   t = 1.20},
             {s = path .. "chback.ogg",  t = 1.9},
-            {s = path .. "chamber.ogg", t = 2},
+            {s = path .. "chforward.ogg", t = 2},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.3},
             {s = common .. "shoulder.ogg",  t = 2.65},
         },
@@ -776,8 +775,37 @@ SWEP.Animations = {
             {s = common .. "magpouch.ogg", t = 0.7, c = ci},
             {s = path .. "magin.ogg",   t = 1.10},
             {s = path .. "chback.ogg",  t = 1.9},
-            {s = path .. "chamber.ogg", t = 2.0},
+            {s = path .. "chforward.ogg", t = 2.0},
             {s = {common .. "cloth_1.ogg", common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_5.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}, t = 2.3},
+        },
+    },
+
+    -- Inspect --
+
+    ["enter_inspect"] = {
+        Source = "inspect_enter",
+        -- time = 30 / 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 2.5,
+        SoundTable = {
+        },
+    },
+    ["idle_inspect"] = {
+        Source = "inspect_loop",
+        -- time = 72 / 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 999, -- maybe im dumb
+    },
+    ["exit_inspect"] = {
+        Source = "inspect_exit",
+        -- time = 30 / 60,
+        LHIK = true,
+        LHIKIn = 0,
+        LHIKOut = 999, -- maybe im dumb
+        SoundTable = {
+ 
         },
     },
 }
