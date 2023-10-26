@@ -815,13 +815,14 @@ SWEP.Animations = {
 
     ["cycle"] = {
         Source = "cycle",
-        Time = 32 / 30,
+        Time = 36 / 30,
+        MinProgress = 0.75,
         ShellEjectAt = 0.4,
         SoundTable = {
             {s = rottle, t = 0, v = 50},
-            {s = path .. "slide_pull_new.ogg",  t = 0.3, c = ci, v = 50},
-            {s = path .. "sliderel_deact.ogg",  t = 0.3, c = ci, v = 50},
-            {s = path .. "slide_rel_new.ogg",        t = 0.55, c = ci, v = 50},
+            {s = path .. "slide_pull_new.ogg",  t = 0.18, c = ci, v = 50},
+            {s = path .. "sliderel_deact.ogg",  t = 0.18, c = ci, v = 50},
+            {s = path .. "slide_rel_new.ogg",        t = 0.3, c = ci, v = 50},
         },
         LHIK = true,
         LHIKIn = 0.2,
@@ -831,12 +832,12 @@ SWEP.Animations = {
     },
     ["cycle_empty"] = {
         Source = "cycle_empty",
-        Time = 32 / 30,
+        Time = 36 / 30,
         ShellEjectAt = 0.4,
         SoundTable = {
             {s = rottle, t = 0, v = 50},
-            {s = path .. "slide_pull_new.ogg",  t = 0.3, c = ci, v = 50},
-            {s = path .. "sliderel_deact.ogg",  t = 0.3, c = ci, v = 50},
+            {s = path .. "slide_pull_new.ogg",  t = 0.18, c = ci, v = 50},
+            {s = path .. "slide_lock.ogg",  t = 0.4, c = ci, v = 50},
         },
         LHIK = true,
         LHIKIn = 0.2,
